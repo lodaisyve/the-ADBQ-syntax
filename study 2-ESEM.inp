@@ -1,0 +1,12 @@
+TITLE: THIS IS A ESEM
+DATA: FILE IS id+defend.dat;
+VARIABLE: NAMES ARE newid
+d1-d24;
+USEVARIABLES ARE
+d1-d24;
+MODEL: F1-F5 BY d1-d24 (*1);
+OUTPUT: STANDARDIZED MOD; 
+SAVEDATA: 
+file = factorscore.dat;
+format = free;
+save = fscores;

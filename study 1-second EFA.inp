@@ -1,0 +1,15 @@
+TITLE: The structure of ADBQ - EFA
+DATA: FILE IS wave1-24 item.dat;
+VARIABLE: NAMES ARE newid age
+sex onlychild medu fedu
+d1 d2 d3 d5 d6 d7 d8 d9 d11
+d13 d14 d15 d16 d18 d22 d23
+d24 d25 d26 d27 d30 d31 d32 d33;
+USEVARIABLES ARE d1 d2 d3 d5 d6 d7 d8 d9 d11
+d13 d14 d15 d16 d18 d22 d23
+d24 d25 d26 d27 d30 d31 d32 d33;
+ANALYSIS: ROTATION=GEOMIN(oblique);
+ESTIMATOR=MLR;
+TYPE=EFA 1 5;
+OUTPUT: STANDARDIZED MOD;
+PLOT: TYPE IS PLOT2;
